@@ -126,6 +126,7 @@ LOGIN_URL = '/authlogin'
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
