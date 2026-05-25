@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Listing All Products{% endblock title %}
+{% load static %}
+{% block main %}
+<div class="container">
+  <h1>All Products</h1>
+  <div class="products-container">
+    {% for product in all_prod %}
+    <div class="product-card">
+      <img
+        src="{{ product.image.url }}"
+        alt="{{ product.name }}"
+        class="product-image"
+        enctype="multipart/form-data"
+      />
+      <h4>Name:{{ product.name }}</h4>
+      <p>Description: {{ product.description }}</p>
+      <p>Quantity: {{ product.quantity }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <p>List By: {{ product.user.username }}</p>
+      {% if product.user == user %}
+      <a href="{% url 'edit-product' product.id %}"><button>Edit</button></a>
+      <a href="{% url 'delete-product' product.id %}"
+        ><button>Delete</button></a
+      >
+
+      {% else %}
+      <a href="{% url 'buy-product' product.id %}"><button>Buy</button></a>
+      {% endif %}
+    </div>
+
+    {% endfor %}
+     <div class="upload-btn-container">
+  <a href="{% url 'add-product' %}">
+      <button id="upload-btn">Upload a Product</button>
+    </a>
+  </div>
+  </div>
+ 
+</div>
+{% endblock main%}

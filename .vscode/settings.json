@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": false,
+  "editor.tabSize": 4,
+  "files.autoSave": "afterDelay",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true
+}

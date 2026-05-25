@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Buy Product{% endblock title %}
+
+{% load static %}
+
+{% block main %}
+<div class="container">
+    <h1>Buy Product</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="quantity">Quantity</label><br>
+        <input name="quantity" id="quantity" type="number"><br>
+        <button type="submit" class="btn btn-primary">Buy Product</button>
+    </form>
+</div>
+{% endblock main %}

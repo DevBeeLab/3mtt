@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% for msg in messages %}
+    <p class="{{ msg.tag }}">{{ msg }}</p>
+{% endfor %}
+
+{% block main %}
+    <h1>You are welcome to DevBee.Com</h1>
+{% endblock main %}

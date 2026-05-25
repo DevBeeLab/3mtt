@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'my_css/styles.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div>
+            {% for msg in messages %}
+                <p class="{{ msg.tag }}">{{ msg }}</p>
+            {% endfor %}
+        </div>
+
+        {% block main %}
+        {% endblock main %}
+    </main>
+    <footer>
+        <p>&copy; 2026 All rights reserved. DevBee </p>
+    </footer>
+</body>
+</html>
